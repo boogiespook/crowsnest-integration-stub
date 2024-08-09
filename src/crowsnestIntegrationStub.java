@@ -38,8 +38,8 @@ String query = String.format("SELECT * from integrations WHERE hash = %s", integ
 
     //@Parameters(paramLabel = "<dbPassword>", defaultValue = "quarkus", description = "Db password")
     //String password;
-    //String password = System.getenv("PG_PASSWORD");
-    String password = "password";
+    String password = System.getenv("PG_PASSWORD");
+//    String password = "password";
 
     //@Parameters(paramLabel = "<dbUrl>", defaultValue = "jdbc:postgresql://postgresql:5432/telescope", description = "Db URL")
     //String url;
