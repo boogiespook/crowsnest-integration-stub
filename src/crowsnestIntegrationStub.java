@@ -13,9 +13,11 @@ import picocli.CommandLine.Parameters;
 import java.net.*;
 import java.io.*;
 import java.sql.*;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import java.text.ParseException;
+
+//import org.json.simple.JSONObject;
+//import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
 import java.util.Map;
 import java.util.Set;
 import java.util.Properties;
@@ -114,9 +116,10 @@ String query = String.format("SELECT * from integrations WHERE hash = %s", integ
         success = 0;
         failure = 0;
 //        int responseResult = 0;
-//        JSONParser parser = new JSONParser();
+//        JSONParser parser = new JSONParser();JSONObject jo = new JSONObject(
 //        System.out.printf("Response: %s\n", responseData.toString());
-        int responseResult = Integer.valueOf(responseData.toString());
+//          JSONObject responseObject = new JSONObject(responseData);
+int responseResult = Integer.valueOf(responseData.toString());
         if (responseResult == success_criteria) {
             success++;
             flag_id = 2;
@@ -187,7 +190,8 @@ String query = String.format("SELECT * from integrations WHERE hash = %s", integ
         if (capability_id != 0) {
             setCapabilityWithFlag();
             setIntegrationLastUpdate();
-                    System.out.printf("Flag updated to: %s\n", flag_id);
+            String flagColour = ((flag_id == 1) ? "Red" : "Green");
+                    System.out.printf("Flag updated to: %s\n", flagColour);
         }
     }
 }

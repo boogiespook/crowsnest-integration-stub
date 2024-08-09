@@ -31,8 +31,8 @@ String password = System.getenv("PG_PASSWORD");
 // String password = "mysecurePassword";
 ```
 
-## Crowsnest Seer
-Create an integration on Seer with the relevant information
+## CrowsNest Seer
+Create an integration on CrowsNest Seer with the relevant information
 
 ![Example integration](images/addIntegration.png)
 
@@ -68,10 +68,10 @@ Running compliance check for CrowsNest integration using hash 563MK
 Remote URL: https://www.chrisj.co.uk/stub/
 Result: 1
 Success criteria: 1
-Flag updated to: 2
+Flag updated to: Green
 2024-08-09 09:44:34,218 INFO  [io.quarkus] (main) quarkus stopped in 0.007s
 ```
-You can see that the result matches the success criterea so the flag has been updated to 2 (green)
+You can see that the result matches the success criterea so the flag has been updated to Green.
 
 ## Refresh the dashboard
 Secure Images should be green and the main domain aperture should also be green
